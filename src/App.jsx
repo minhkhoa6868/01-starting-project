@@ -22,7 +22,7 @@ function App() {
     function handleSelect(selectedButton) {
       // selectedButton => 'components', 'JSX', 'Props', 'State'
       setselectedTopic(selectedButton);
-      console.log(selectedTopic);
+      console.log(selectedTopic); 
     }
 
     return (
