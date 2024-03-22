@@ -1,8 +1,7 @@
-import { useState } from 'react';
-import { CORE_CONCEPTS } from './data.js';
+import { Fragment } from 'react';
 import Header from './components/Header/Header.jsx';
-import CoreConcept from './components/CoreConcept/CoreConcept.jsx';
-import TabButton from './components/TabButton.jsx';
+import CoreConcepts from './components/CoreConcepts.jsx';
+import Examples from './components/Examples.jsx';
 
 function MainGoal() {
     return (
@@ -17,41 +16,16 @@ function MainGoal() {
 
 
 function App() {
-    const [selectedTopic, setselectedTopic] = useState('Please click a button')
-
-    function handleSelect(selectedButton) {
-      // selectedButton => 'components', 'JSX', 'Props', 'State'
-      setselectedTopic(selectedButton);
-      console.log(selectedTopic);
-    }
-
     return (
-      <div>
+      <Fragment>
         <Header />
         <main>
-          <section id="core-concepts">
-            <h2>Core Concepts</h2>
-            <ul>
-              <CoreConcept {...CORE_CONCEPTS[0]} />
-              <CoreConcept {...CORE_CONCEPTS[1]} />
-              <CoreConcept {...CORE_CONCEPTS[2]} />
-              <CoreConcept {...CORE_CONCEPTS[3]} />
-            </ul>
-          </section>
-          <section id="examples">
-            <h2>Examples</h2>
-            <menu>
-              <TabButton onSelect={() => handleSelect('components')}>Components</TabButton>
-              <TabButton onSelect={() => handleSelect('jsx')}>JSX</TabButton>
-              <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
-              <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
-            </menu>
-            {selectedTopic}
-          </section>
+          <CoreConcepts />
+          <Examples />
           <h2>Time to get started!</h2>
         </main>
         <MainGoal />
-      </div>
+      </Fragment>
     );
 }
 
