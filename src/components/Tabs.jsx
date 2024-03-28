@@ -1,9 +1,12 @@
-export default function Tabs() {
+// using slot to make code cleaner
+export default function Tabs({ children, buttons, ButtonContainer = 'menu' }) {
+    // custom component
+    //const ButtonContainer = buttonsContainer;
+
     return (
         <>
-            <menu>
-                
-            </menu>
+            <ButtonContainer>{buttons}</ButtonContainer>
+            {children}
         </>
     );
 }
