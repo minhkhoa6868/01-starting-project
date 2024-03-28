@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import Header from './components/Header/Header.jsx';
 import CoreConcepts from './components/CoreConcepts.jsx';
 import Examples from './components/Examples.jsx';
@@ -17,7 +16,7 @@ function MainGoal() {
 
 function App() {
     return (
-      <Fragment>
+      <>
         <Header />
         <main>
           <CoreConcepts />
@@ -25,7 +24,7 @@ function App() {
           <h2>Time to get started!</h2>
         </main>
         <MainGoal />
-      </Fragment>
+      </>
     );
 }
 
